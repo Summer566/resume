@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪元素</title>
+	<style>
+		/*
+		伪元素：向特定的选择器添加样式
+		::或:
+		:first-letter 向文本中的第一个字母添加样式
+		 */
+		#p1::first-letter{
+			font-size: 20px;
+			color: red;
+			background-color: blue;
+			border:1px solid red;
+		}
+		/*
+		::first-line:
+			向文本的首行添加特殊样式
+		 */
+		#p2::first-line{ background-color: red; }
+		/*混合添加样式*/
+		#p2::first-letter{ 
+			font-size: 20px;
+			color: red;
+			background-color: blue;
+			border:1px solid red; 
+		}
+
+		/*
+			:before:在元素内容前面添加新的内容;
+
+		 */
+		#p3:before{ 
+			/*content: "新的内容";*/
+			content: "我是段落";
+			
+			}
+
+			/*
+				:after;元素后面添加内容
+			 */
+			#p3:after{
+				content: "after-------";
+				background-color: red;
+				/*
+					content:默认类型是行内元素;内容撑开宽高，宽高不允许修改，可以同行显示
+				 */
+				
+				/*把行内标签修改成块标签*/
+				display: block;
+				width: 100px;
+			}
+	</style>
+</head>
+<body>
+	<p id="p1">我是段落1</p>
+	<p id="p2">我是段落2</p>
+	<p id="p3">我是段落3</p>
+</body>
+</html>

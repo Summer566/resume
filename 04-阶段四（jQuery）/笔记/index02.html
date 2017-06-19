@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>淡入淡出</title>
+	<style>
+		body{
+			margin: 50px 500px;
+		  }
+		#div1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			}
+	</style>
+</head>
+<body>
+	<button id="fadeIn">淡入</button>
+	<button id="fadeOut">淡出</button>
+	<button id="fadeToggle">淡入或者淡出</button>
+	<button id="fadeTo">淡入到指定程度</button>
+	<br><br>
+	<div id="div1" style="display: none"></div>
+</body>
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			// 淡入
+ 			 $("#fadeIn").click(function(){
+            	$("#div1").fadeIn();
+        	});
+ 			// 淡出
+ 			  $("#fadeOut").click(function(){
+            	$("#div1").fadeOut();
+            });
+ 			 // 淡入淡出
+            $("#fadeToggle").click(function(){
+            	$("#div1").fadeToggle();
+ 			
+            });
+ 			// 淡入到指定程度
+ 			 $("#fadeTo").click(function(){
+            	$("#div1").fadeTo("slow",0.7);
+            });
+
+		});
+	
+	</script>
+</html>

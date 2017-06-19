@@ -1,0 +1,73 @@
+一、作用域
+    在 JavaScript 中, 作用域为可访问变量，对象，函数的集合，作用域在函数内修改。
+   （1）局部作用域：变量在函数内声明，变量为局部作用域。局部变量只能在函数内部访问
+        局部变量在函数开始执行时创建，函数执行完后局部变量会自动销毁
+   （2）全局作用域：变量在函数外定义，为网页中所有脚本和函数均可使用
+	如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量
+
+二、闭包
+     JavaScript 闭包：使得函数拥有私有变量，可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭
+    //var add = (function () {
+          var counter = 0;
+          return function () {return counter += 1;}
+      })();
+
+     add();
+     add();
+     add();
+
+     // 计数器为 3
+
+三、RegExp正则表达式
+   RegExp 对象有 3 个方法：test()、exec() 以及 compile()
+ 1.test() 方法检索字符串中的指定值。返回值是 true 或 false
+ 2.exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null
+ 3.compile() 方法用于改变 RegExp；compile() 既可以改变检索模式，也可以添加或删除第二个参数。
+
+四、AJAX
+ 1.XHR创建对象
+  XMLHttpRequest 是 AJAX 的基础，创建 XMLHttpRequest 对象的语法：variable=new XMLHttpRequest();
+ //兼容IE5.6浏览器
+  var xmlhttp;
+  if (window.XMLHttpRequest){
+     // code for IE7+, Firefox, Chrome, Opera, Safari
+     xmlhttp=new XMLHttpRequest();
+  }else{
+    // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+  }
+ 2.XHR请求
+  向服务器发送请求，有2种方法：open() 和 send() 方法
+  （1）xmlhttp.open(method,url,async)：规定请求的类型、URL 以及是否异步处理请求
+       method：请求的类型；GET 或 POST
+       url：文件在服务器上的位置
+  （2）send(string)：将请求发送到服务器。
+       string：仅用于 POST 请求async：true（异步）或 false（同步）
+ 3.XHR响应
+   XMLHttpRequest 对象的 responseText 或 responseXML 属性响应服务器
+   （1）responseText：获得字符串形式的响应数据，用于响应服务器的并非是 XML
+   （2）responseXML：获得 XML 形式的响应数据，响应服务器的是 XML，而且需要作为 XML 对象进行解析
+ 4.onreadystatechange 事件
+   当请求被发送到服务器时，我们需要执行一些基于响应的任务。每当 readyState 改变时，就会触发 onreadystatechange 事件。readyState 属性存有 XMLHttpRequest 的状态信息
+   XMLHttpRequest 对象的三个重要的属性：
+   （1）onreadystatechange：存储函数（或函数名），每当 readyState 属性改变时，就会调用该函数
+   （2）readyState：
+	存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+	0: 请求未初始化
+	1: 服务器连接已建立
+	2: 请求已接收
+	3: 请求处理中
+	4: 请求已完成，且响应已就绪
+   （3）status：服务器常用的状态码及其对应的含义
+	200：服务器响应正常。
+   	304：该资源在上次请求之后没有任何修改（这通常用于浏览器的缓存机制，使用GET请求时尤其需要注意）。
+ 	400：无法找到请求的资源。
+ 	401：访问资源的权限不够。
+ 	403：没有权限访问资源。
+	404：需要访问的资源不存在。
+ 	405：需要访问的资源被禁止。
+ 	407：访问的资源需要代理身份验证。
+ 	414：请求的URL太长。
+ 	500：服务器内部错误。
+	

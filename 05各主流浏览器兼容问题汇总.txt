@@ -1,0 +1,151 @@
+一、浏览器内核简介
+     浏览器最重要或者说核心的部分是“Rendering Engine”，可大概译为“解释引擎”，不过我们一般习惯将之称为“浏览器内核”。负责对网页语法的解释（如HTML、JavaScript）并渲染（显示）网页。
+　 　所以，通常所谓的浏览器内核也就是浏览器所采用的渲染引擎，渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息。不同的浏览器内核对网页编写语 法的解释也有不同，因此同一网页在不同的内核的浏览器里的渲染（显示）效果也可能不同，这也是网页编写者需要在不同内核的浏览器中测试网页显示效果的原 因。
+　　浏览器内核很多，如果加上所有的几乎没有什么人在用的非商业的免费内核，那么可能大约有10款以上甚至更多，不过通常我们比较常见的大约只有以下四种，下面先简单介绍一下。
+1、 Trident
+    IE浏览器使用的内核,该内核程序在1997年的IE4中首次被采用，是微软在Mosaic代码的基础之上修改而来的，并沿用到目前的IE8。 Trident实际上是一款开放的内核，其接口内核设计的相当成熟，因此才有许多采用IE内核而非IE的浏览器涌现（如 Maxthon、The World 、TT、GreenBrowser、AvantBrowser等）。此外，为了方便也有很多人直接简称其为IE内核（当然也不排除有部分人是因为不知道内 核名称而只好如此说）。
+　　由于IE本身的“垄断性”（虽然名义上IE并非垄断，但实际上，特别是从Windows 95年代一直到XP初期，就市场占有率来说IE的确借助Windows的东风处于“垄断”的地位）而使得Trident内核的长期一家独大，微软很长时间都并没有更新Trident内核，这导致了两个后果——一是Trident内核曾经几乎与W3C标准脱节（2005年），二是Trident内核的大量 Bug等安全性问题没有得到及时解决，然后加上一些致力于开源的开发者和一些学者们公开自己认为IE浏览器不安全的观点，也有很多用户转向了其他浏览 器，Firefox和Opera就是这个时候兴起的。非Trident内核浏览器的市场占有率大幅提高也致使许多网页开发人员开始注意网页标准和非IE浏 览器的浏览效果问题。
+2、Gecko
+    Netscape6开始采用的内核，后来的Mozilla FireFox也采用了该内核，Gecko的特点是代码完全公开，因此，其可开发程度很高，全世界的程序员都可以为其编写代码，增加功能。因为这是个开源 内核，因此受到许多人的青睐，Gecko内核的浏览器也很多，这也是Geckos内核虽然年轻但市场占有率能够迅速提高的重要原因。
+　　事 实上，Gecko引擎的由来跟IE不无关系，前面说过IE没有使用W3C的标准，这导致了微软内部一些开发人员的不满；他们与当时已经停止更新了的 Netscape的一些员工一起创办了Mozilla，以当时的Mosaic内核为基础重新编写内核，于是开发出了Geckos。不过事实上，Gecko 内核的浏览器仍然还是Firefox用户最多，所以有时也会被称为Firefox内核。此外Gecko也是一个跨平台内核，可以在Windows、 BSD、Linux和Mac OS X中使用。
+3、Presto
+     目前Opera采用的内核，该内核在2003年的Opera7中首次被使用，该款引擎的特点就是渲染速度的优化达到了极致，也是目前公认网页浏览速度最快的浏览器内核，然而代价是牺牲了网页的兼容性。
+　 　实际上这是一个动态内核，与前面几个内核的最大的区别就在脚本处理上，Presto有着天生的优势，页面的全部或者部分都能够在回应脚本事件时等情况下 被重新解析。此外该内核在执行Javascrīpt的时候有着最快的速度，根据在同等条件下的测试，Presto内核执行同等Javascrīpt所需的 时间仅有Trident和Gecko内核的约1/3（Trident内核最慢，不过两者相差没有多大）。那次测试的时候因为Apple机的硬件条件和普通 PC机不同所以没有测试WebCore内核。只可惜Presto是商业引擎，使用Presto的除开Opera以外，只剩下NDSBrowser、Wii Internet Channle、Nokia 770网络浏览器等，这很大程度上限制了Presto的发展。
+4、Webkit
+    苹果公司自己的内核，也是苹果的Safari浏览器使用的内核。 Webkit引擎包含WebCore排版引擎及JavaScriptCore解析引擎，均是从KDE的KHTML及KJS引擎衍生而来，它们都是自由软 件，在GPL条约下授权，同时支持BSD系统的开发。所以Webkit也是自由软件，同时开放源代码。在安全方面不受IE、Firefox的制约，所以 Safari浏览器在国内还是很安全的。
+　　限于Mac OS X的使用不广泛和Safari浏览器曾经只是Mac OS X的专属浏览器，这个内核本身应该说市场范围并不大；但似乎根据最新的浏览器调查表明，该浏览器的市场甚至已经超过了Opera的Presto了——当然 这一方面得益于苹果转到x86架构之后的人气暴涨，另外也是因为Safari 3终于推出了Windows版的缘故吧。Mac下还有OmniWeb、Shiira等人气很高的浏览器。
+　　google的chrome也使用webkit作为内核。
+WebKit 内核在手机上的应用也十分广泛，例如 Google 的手机 Gphone、 Apple 的 iPhone, Nokia’s Series 60 browser 等所使用的 Browser 内核引擎，都是基于 WebKit。
+二、兼容性
+1、通用hack方法
+（1）利用浏览器自身的bug来实现特定浏览器的样式；
+（2）利用浏览器对CSS的完善度来实现，例如某些CSS规则或语法的支持程度，原理类似目前我们经常使用的 -wekit-　之类的属性
+（3）IE条件注释。IE的条件注释仅仅针对IE浏览器，对其他浏览器无效
+（4）!important 关键字。!important 在css中是声明拥有最高优先级，也就是说，不管css的其他优先级，只要!important出现，他的优先级就最高！遨游1.6及更低版本、IE6及更低版本浏览器不能识别它。尽管这个!important 很实用，但是非到必要的时刻，不要使用它！
+（5）属性过滤器。针对不同的IE浏览器，可以使用不同的字符来让特定的版本的IE浏览器进行样式控制。
+2、CSS兼容方案
+（1）a标签CSS顺序。很多新人在写a标签的样式，会疑惑为什么写的样式没有效果，其实只是写的样式被覆盖了，正确的a标签顺序应该：link- visited- hover -active
+（2）24位的png图片。24位的PNG图片在IE6是不支持的，解决方案有两种：使用8位的PNG图片；为IE6准备一套特殊的图。
+（3）透明度。opacity: 0.8; //通用；filter: alpha(opacity=80); //IE；filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=80); //IE6的写法
+（4）IE6双边距。行内属性设置了块级属性（display: block;）后，会产生双倍边距。解决方案是在添加一个 display: inline; 或者 display: table。
+（5）双倍margin。浮动元素设置了margin在IE6下会产生双倍margin。只要给浮动元素设置 display: inline;就可以了。或者说使用IE6的hack：_margin。
+（6）min-height的兼容写法
+.divBox{
+  min-height:200px;
+  height:auto !important;
+  height:200px;
+  overflow:visible;
+}
+（7）IE6最小宽度
+.divBox{
+  min-width:600px;
+	_width: expression(document.body.clientWidth < 600? "600px":"auto");
+}
+（8）盒模型差异
+   IE盒模型：margin 、 content（包含border、padding）
+   W3C盒模型： margin 、border、 padding、 content
+   CSS3中的box-sizing的属性就是为了这两种模式，border-box（IE盒明星）和content-box（W3C）
+（9）img标签-图片存在边距。使用 vertical-align 属性可以清楚这种边距，顺便说下a标签同样会存在边距，具体的解决方法可以看看去除inline-block元素间间距的N种方法。
+（10）双倍float
+.divBox{
+  float:left;
+  width:100px;
+  margin:0 0 0 100px;		     //这种情况之下IE会产生200px的距离
+  display:inline; 				 //使浮动忽略
+}
+（11）ul列表边距属性不统一：IE下 ul的边距是使用margin；firefox下ul的边距是使用
+paddin。重置CSS基本样式， 统一使用margin或者padding。
+（12）IE6下select元素显示bug。select元素在IE6下是以窗口的形式展现的，所以在你需要弹出一个提示框（modal）的时候，你会发现select在modal的上面，无论你设置多大z-index都无效。解决的方法也很简单，利用一个透明的iframe盖住select就可以了。
+<div class=””wrapper>
+	<!--[if IE 6]>
+    <iframe style="position:absolute;top:0;left:0;width:100%;height:100px;
+    z-index:-1;filter:alpha(opacity=0);opacity=0;border-style:none;">
+    </iframe>
+  <![endif]-->
+	// TODO;
+</div>
+3，JS兼容性
+（1）document.formName.item()
+document.formName.item(”itemName”);
+//IE支持
+document.formName.elements["elementName"];
+//均支持
+（2）获取属性。根据很多的人的反馈来看，无论是常规的获取自定义属性，或是jq的attr()在不同的环境下都是存在着些许兼容性问题，所以为了保险起见，最好是使用原生的getAttribute()来获取属性。
+（3）ID.在IE下，我们是可以通过document.idName来获取元素，但是Firefox是不允许的。而且Firefox中我们使用与html对象ID相同的变量名，所以，获取元素最好使用document.getElementById(”idName”) 代替 document.idName，避免不必要的bug。
+（4）input.type IE下不允许修改input的类型，Firefox可以修改。尽量避免修改input的类型。
+（5）setattribute
+object.setAttribute("class","style");
+//在IE8、Chrome、火狐、Opera10中都能设置成功；但是在IE7下无法设置。
+object.setAttribute("className","className");
+//只有IE7能设置成功，但是其他浏览器均无法设置。
+（6）style与cssText
+     IE8以下不兼容indexof()方法, 添加indexof的原型方法即可。
+if (!Array.prototype.indexOf){
+  Array.prototype.indexOf = function(elt){
+    var len = this.length >>> 0;
+    var from = Number(arguments[1]) || 0;
+    from = (from < 0)? Math.ceil(from): Math.floor(from);
+    if (from < 0){
+      from += len;
+    }
+    for (; from < len; from++){
+      if (from in this && this[from] === elt){
+        return from;
+      }
+    }
+    return -1;
+  };
+}
+（7）event.srcElement
+    IE下，even不存在target属性
+srcObj = event.srcElement ? event.srcElement : event.target;
+（8）父节点parentElement
+ele.parentElement
+//firebox不支持
+ele.parentNode
+//通用
+（9）table使用innerHtml
+    在IE中使用innerHtml和appendChild无效，解决方法是将内容插入到tbody中
+var row = document.createElement("tr");
+var cell = document.createElement("td");
+var cell_text = document.createTextNode("插入的内容");
+cell.appendChild(cell_text);
+row.appendChild(cell);
+document.getElementsByTagName("tbody")[0].appendChild(row);
+（10）移除节点
+removeNode();
+//firebox不支持
+removeChild();
+//通用，取上一层父节点再移除子节点
+（11）坐标
+var page = {};
+page.x = event.x ? event.x : event.pageX;
+page.y = event.y ? event.y:event.pageY;
+//event的x,y在IE中支持，pageX和pageY在Firefox中支持
+（12）事件监听
+function addEvent(elem, eventName, handler) {
+　　if (elem.attachEvent) {
+　　　　elem.attachEvent("on" + eventName,function(){
+　　　　　　handler.call(elem)}); 　 //此处使用回调函数call()，让this指向elem　　
+  } else if (elem.addEventListener) {
+　　    elem.addEventListener(eventName, handler, false);　　
+  }
+}
+function removeEvent(elem, eventName, handler) {
+  if (elem.detachEvent) {
+  　　elem.detachEvent("on" + eventName,function(){
+  　　　	handler.call(elem)}); 　　　　//此处使用回调函数call()，让this指向elem　　
+  } else if (elem.removeEventListener) {
+  　　elem.removeEventListener(eventName, handler, false);　　
+  }
+}
+//IE提供了attachEvent和detachEvent两个接口，而Firefox提供的是addEventListener和removeEventListener。
+（13）键盘事件 keyCode
+function getKeyCode(e){
+  //兼容IE和Firefox获得keyBoardEvent对象
+  e = e ? e : (window.event ? window.event : "")  
+  //兼容IE和Firefox获得keyBoardEvent对象的键值
+  return e.keyCode ? e.keyCode : e.which;
+}
+//IE：e.keyCode
+//fireFox: e.which

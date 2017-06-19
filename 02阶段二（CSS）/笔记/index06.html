@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表及边框样式</title>
+	<style>
+		li{
+			/*
+			none：取消样式；(最常用)
+			circle:空心圆;
+			disc:实心圆;
+			square:方块;
+			decimal:数字;
+			 */
+			list-style-type: decimal;
+			/*图片样式*/
+			list-style-image: url(xx.jpg);
+			/*
+			样式位置：
+			outside:默认(li的外部);
+			inside:；li的内部;
+
+			 */
+			list-style-position: inside;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			/*外框颜色*/
+			outline-color: green;
+			/*外框宽度*/
+			outline-width: 10px;
+			/*外框样式*/
+			/*
+				solid:实线;
+				dashed:虚线;
+				dotted:点;
+				double:双边框;
+				outset:3d凸;
+				inset:3d凹;
+				ridge:3d凸槽;
+			 */
+			outline-style: ridge;
+			/*简写*/
+			outline: 10px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>西瓜</li>
+		<li>苹果</li>
+		<li>橘子</li>
+	</ul>
+	<div>div</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>滑动</title>
+		<style>
+			.panel1,.panel2,.panel3,#div1,#div2,#div3{
+				width: 800px;
+				text-align: center;
+				
+				background-color: #e5eecc;
+				border:1px solid #ccc;
+				font-size: 20px;
+			}
+			#div1,#div2,#div3{
+				height: 30px;
+				
+			}
+			.panel1,.panel2.panel3{
+				height: 80px;
+			}
+			.panel2{
+				display: none;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="panel1">
+			<p>我向上滑</p>
+		</div>
+		<div id="div1">请点击这里</div>
+
+		<br><br>
+		<div class="panel2">
+			<p>我向下滑</p>
+		</div>
+		<div id="div2">请点击这里</div>
+
+		<br><br>
+		<div class="panel3">
+			<p>我向上下滑</p>
+		</div>
+		<div id="div3">请点击这里</div>
+
+
+
+	</body>
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+  			$("#div1").click(function(){
+    			$(".panel1").slideUp("slow");
+  			});
+  			$("#div2").click(function(){
+    			$(".panel2").slideDown("slow");
+  			});
+  			$("#div3").click(function(){
+    			$(".panel3").slideToggle("slow");
+  			});
+		});
+		
+	</script>
+</html>

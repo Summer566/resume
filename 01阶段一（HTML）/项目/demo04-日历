@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日历</title>
+	<style type="text/css">
+		.ui-wrapper{
+			width: 240px;
+			font-size: 16px;
+			color: #666;
+			box-shadow: 2px 2px 8px 2px rgba(128,128,128,3);
+			margin: 50px 500px;
+		}
+		.ui-wrapper .ui-header{
+			padding: 0 20px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background: #f0f0f0;
+			border-bottom: 1px solid #ccc;
+			font-weight: bold;
+
+		}
+		.ui-wrapper .ui-btn{
+			font-family: serif;
+			font-size: 20px;
+			width: 20px;
+			height: 50px;
+			line-height: 50px;
+			color: #1abc9c;
+			text-align: center;
+			cursor: pointer;
+			text-decoration: none;
+		}
+		.ui-wrapper .ui-prev-btn{
+			float: left;
+		}
+		.ui-wrapper .ui-next-btn{
+			float: right;
+		}
+		.ui-wrapper .ui-body table{
+			width: 100%;
+			border-collapse: collapse;
+		}
+		.ui-wrapper .ui-body th,
+		.ui-wrapper .ui-body td{
+			height: 30px;
+			text-align: center;
+		}
+		.ui-wrapper .ui-body th{
+			font-size: 12px;
+			height: 40px;
+			line-height: 40px;
+		}
+		.ui-wrapper .ui-body td{
+			border: 1px solid #f0f0f0;
+			font-size: 10px;
+			width: 14%;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="ui-wrapper">
+		<div class="ui-header">
+		<a href="" class="ui-btn ui-prev-btn">&lt;</a>
+		<a href="" class="ui-btn ui-next-btn">&gt;</a>
+		<span class="ui-current-month">2017-6</span>
+		</div>
+		<div class="ui-body">
+			<table>
+				<thead>
+					<tr>
+						<th>一</th>
+						<th>二</th>
+						<th>三</th>
+						<th>四</th>
+						<th>五</th>
+						<th>六</th>
+						<th>日</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>29</td>
+						<td>30</td>
+						<td>31</td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>6</td>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+						<td>11</td>
+					</tr>
+					<tr>
+						<td>12</td>
+						<td>13</td>
+						<td>14</td>
+						<td>15</td>
+						<td>16</td>
+						<td>17</td>
+						<td>18</td>
+					</tr>
+					<tr>
+						<td>19</td>
+						<td>20</td>
+						<td>21</td>
+						<td>22</td>
+						<td>23</td>
+						<td>24</td>
+						<td>25</td>
+					</tr>
+					<tr>
+						<td>26</td>
+						<td>27</td>
+						<td>28</td>
+						<td>29</td>
+						<td>30</td>
+						<td>1</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

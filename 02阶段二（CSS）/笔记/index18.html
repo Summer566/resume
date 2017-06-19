@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文本效果</title>
+		<style>
+			/* 
+				CSS3中新的文本属性：
+				    text-shadow
+					box-shadow
+					text-overflow
+					word-wrap
+					word-break
+			 */
+
+			/* text-shadow*/
+			.div1{
+				text-shadow: 5px 5px 5px #FF0000;
+				font-size: 30px;
+				font-weight: bolder;
+				margin-bottom: 20px;
+			}
+
+			/*text-overflow*/
+			div.test{
+				white-space:nowrap; 
+				width:12em; 
+				overflow:hidden; 
+				border:1px solid #000000;
+				margin-bottom: 20px;
+			}
+
+			/*box-shadow*/
+			.div2{
+				width: 300px;
+			    height: 100px;
+			    padding: 15px;
+			    background-color: yellow;
+			    box-shadow: 10px 10px 5px grey;
+			}
+			
+			
+			.scale{
+				width: 200px;
+				height: 200px;
+				background: pink;
+				margin: 10px auto;
+				/*扩大两倍*/
+				transform: scaleX(2);
+				transform: scaleY(1.5);
+				transform: scaleY(0.5);
+				/*简写*/
+				transform: scale(2,2);
+				/*
+				 * 兄弟元素布局参考的是初始位置
+				 */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div1">文本效果</div>
+
+		<div class="test" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</div>
+		<div class="test" style="text-overflow:clip;">This is some long text that will not fit in the box</div>
+
+		<div class="div2"></div>
+	</body>
+</html>

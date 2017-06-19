@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--
+			video:ie8或更早不支持
+			视频格式：
+				mp4:ie高版本chrome，火狐
+				webM:谷歌发明，火狐支持，主流模式
+				OGG:火狐，chrome支持
+		-->
+		<!--controls:显示播放控件
+		    autoplay：自动播放
+		    loop:循环播放
+		    preload:视频在页面加载时进行加载，并预备播放,如果使用 "autoplay"，则忽略该属性
+		    src:要播放的视频的 URL
+		    height:设置视频播放器的高度
+			width:设置视频播放器的宽度
+		-->
+		
+		<!--muted:静音-->
+		<video src="video.mp4" width="400px" height="400px" controls autoplay="" loop="" muted=""></video>
+
+		<!--poster:视频播放前的站位图-->
+		<video src="video.mp4" width="400px" height="400px" controls -autoplay="" loop="" poster="02.jpg"></video>
+
+		<audio src="music.mp3" controls="controls"></audio><br>
+
+		<!--兼容所有浏览器-->
+		<video width="200px" height="200px" controls="">
+			<!--
+				chrome和火狐
+				type:视频类型
+			-->
+			<source src="video.mp4" type="video/mp4"></source>
+			<source src="video.webm" type="video/webm"></source>
+			<source src="video.ogg" type="video/ogg"></source>
+		</video>
+
+		<!--audio: 和视频一样
+			mp3,ogg,wav
+		-->
+		<audio controls="">
+			<source src="music.mp3" type="audio/mp3"></source>
+			<source src="music.ogg" type="audio/ogg"></source>
+			<source src="music.wav" type="audio/wav"></source>
+		</audio>
+		
+
+		<!-- HTML5提供了新的语义元素来明确一个Web页面的不同部分 -->
+		
+		
+		<!--头部标签-->
+		<header></header>
+
+		<!--标签导航-->
+		<nav></nav>
+
+		<!--管理h1-h6-->
+		<hgroup>
+			<h3>标题3</h3>
+			<h4>标题4</h4>
+		</hgroup>
+
+		<!--文章侧边栏-->
+		<aside></aside>
+
+		<!--文章内容，一个评论区-->
+		<artical></artical>
+
+		<!--文章分区-->
+		<section></section>
+
+		<!-- 图像、图表、照片
+		figcaption 定义标题
+		 -->
+        <figure>
+        	<figcaption></figcaption>
+        </figure>
+			
+		<!--尾部-->
+		<footer></footer>
+		
+		
+		<header>头部</header>
+		<nav>导航</nav>
+		<section>
+			<aside>侧边栏</aside>
+			<artical>
+				<hgroup>
+					<h2>文章标题</h2>
+				</hgroup>
+			</artical>
+		</section>
+		<footer>结尾</footer>
+	</body>
+
+</html>

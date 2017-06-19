@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>js</title>
+		<!-- HTML 中的脚本必须位于 <script> 与 </script> 标签之间
+        脚本可被放置在 HTML 页面的 <body> 和 <head> 部分中,
+        一般放置于<body> 底部，不干扰页面内容渲染 -->
+
+       <!--  引入方式
+          	1.内部引用
+          	2.外部引用   由src="xx.js"引入 -->
+
+       <!--  注释
+             	1.单行注释以 // 开头
+            	2.多行注释/* 开始，以 */ 结尾 -->
+
+    	<!-- javaScript: （行为） 直译是脚本语言
+			组成部分： 
+			1.ECMAScript: 脚本语言国际web标准，（js的核心），描述了语言的语法和基本对象，javaScript是这个规范的实现
+			
+			2.DOM: document object model 文档对象模型 
+			
+			3.BOM: borwer object model 浏览器对象模型 描述处理浏览器对象的方法
+			
+			特点：
+			1.脚本语言（代码不用进行预编译）
+			2.主要用来向html添加交互事件
+			3.跨平台，浏览器都支持，可以在各个平台下运行（window,Linux,Mac,ios,Android） -->
+			
+	</head>
+	<body>
+		<h1>  My First Web Page </h1>
+
+		<p id="demo">My First Paragraph.</p>
+
+		<script>
+
+		document.getElementById("demo").innerHTML="My First JavaScript";
+		</script>
+	
+	</body>
+</html>
+

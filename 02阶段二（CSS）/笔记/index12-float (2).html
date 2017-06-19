@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动-脱离文档流</title>
+	<style>
+		.box{
+			border: 2px solid gray;
+		}
+		.box div{
+			width: 100px;
+			height: 100px;
+			/*撑起父元素高度*/
+			
+			/*
+			使用支持宽高设置
+			块元素可以同排显示
+			默认内容撑开宽高
+
+			换行不被解析
+			脱离文档流（文档流：文档中显示对象排列时占用的位置）
+
+			提升半层层级
+		 */
+
+		}
+		.div1{
+			background-color: red;
+		}
+		.div2{
+			background-color: blue;
+			float: left;
+			
+		}
+		/*
+		浮动：使元素脱离文档流，按照指定方向移动，遇到父元素边界或者相邻元素边界停止
+		 */
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="div1"></div>
+		<div class="div2"></div>
+	</div>
+	
+</body>
+</html>

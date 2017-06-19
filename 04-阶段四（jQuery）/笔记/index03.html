@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动画</title>
+		<style>
+		   body{
+		   	margin:50px 500px;
+		   }
+			#div1{
+				width: 200px;
+				height: 200px;
+				background-color: grey;
+				position: absolute;
+			}
+			#div2{
+				width: 200px;
+				height: 200px;
+				margin: 300px 0;
+				background-color: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="custom1">开始动画</button>
+		<br><br>
+		<div id="div1"></div>
+
+		<div id="div2">Hello World</div>
+
+	</body>
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+            $("button").click(function(){
+			    var div=$("#div1");
+			    div.animate({height:'300px',opacity:'0.4'},"slow");
+			    div.animate({width:'300px',opacity:'0.8'},"slow");
+			    div.animate({height:'100px',opacity:'0.4'},"slow");
+			    div.animate({width:'100px',opacity:'0.8'},"slow");
+ 			 });
+            $("#div2").click(function(){
+            	var div=$("#div2");  
+    			div.animate({width:'400px'},"slow");
+    			div.animate({fontSize:'3em'},"slow");
+            })
+		});
+	</script>
+</html>

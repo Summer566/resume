@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>过渡动画</title>
+		<style>
+			.div1{
+				width:100px;
+				height:100px;
+				background:pink;
+				transition:width 2s;
+				-moz-transition:width 2s; /* Firefox 4 */
+				-webkit-transition:width 2s; /* Safari and Chrome */
+				-o-transition:width 2s; /* Opera */
+			}
+			.div1:hover{
+				width:300px
+			}
+			.div2{
+				margin-top: 100px;
+				width:100px;
+				height:100px;
+				background:yellow;
+				transition:width 2s, height 2s;
+				-moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+				-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+				-o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+			}
+			.div2:hover{
+				width:200px;
+				height:200px;
+				transform:rotate(180deg);
+				-moz-transform:rotate(180deg); /* Firefox 4 */
+				-webkit-transform:rotate(180deg); /* Safari and Chrome */
+				-o-transform:rotate(180deg); /* Opera */
+			}
+			.div3{
+				margin-top: 50px;
+				width:100px;
+				height:100px;
+				background:red;
+				animation:myfirst 5s;
+				-moz-animation:myfirst 5s; /* Firefox */
+				-webkit-animation:myfirst 5s; /* Safari and Chrome */
+				-o-animation:myfirst 5s; /* Opera */
+			}
+
+			@keyframes myfirst
+			{
+				0%   {background:red;}
+				25%  {background:yellow;}
+				50%  {background:blue;}
+				100% {background:green;}
+			}
+
+			@-moz-keyframes myfirst /* Firefox */
+			{
+				0%   {background:red;}
+				25%  {background:yellow;}
+				50%  {background:blue;}
+				100% {background:green;}
+			}
+
+			@-webkit-keyframes myfirst /* Safari and Chrome */
+			{
+				0%   {background:red;}
+				25%  {background:yellow;}
+				50%  {background:blue;}
+				100% {background:green;}
+			}
+
+			@-o-keyframes myfirst /* Opera */
+			{
+				0%   {background:red;}
+				25%  {background:yellow;}
+				50%  {background:blue;}
+				100% {background:green;}
+			}
+
+			.div4{
+				margin-top: 50px;
+				width:100px;
+				height:100px;
+				background:pink;
+				position:relative;
+				animation:myfirst 8s;
+				-moz-animation:myfirst 8s; /* Firefox */
+				-webkit-animation:myfirst 8s; /* Safari and Chrome */
+				-o-animation:myfirst 8s; /* Opera */
+			}
+
+			@keyframes myfirst
+			{
+			0%   {background:pink; left:0px; top:0px;}
+			50%  {background:grey; left:200px; top:0px;}
+			100% {background:pink; left:0px; top:0px;}
+			}
+
+			@-moz-keyframes myfirst /* Firefox */
+			{
+			0%   {background:pink; left:0px; top:0px;}
+			50%  {background:grey; left:200px; top:0px;}
+			100% {background:pink; left:0px; top:0px;}
+			}
+
+			@-webkit-keyframes myfirst /* Safari and Chrome */
+			{
+			0%   {background:pink; left:0px; top:0px;}
+			50%  {background:grey; left:200px; top:0px;}
+			100% {background:pink; left:0px; top:0px;}
+			}
+
+			@-o-keyframes myfirst /* Opera */
+			{
+			0%   {background:pink; left:0px; top:0px;}
+			50%  {background:grey; left:200px; top:0px;}
+			100% {background:pink; left:0px; top:0px;}
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+	</body>
+</html>
